@@ -34,17 +34,8 @@ $conn = connect();
                 if(!$query){
                     echo mysqli_error($conn);
                 }
-                if(mysqli_num_rows($query) == 0){
-                    echo '<div class="post">';
-                    echo 'There is no results given the keyword, try to widen your search query.';
-                    echo '</div>';
-                    echo '<br>';
-                }
-                while($row = mysqli_fetch_assoc($query)){
-                    include 'includes/post.php';
-                    echo '<br>';
-                }
-            }
+                
+              
         ?>
     </div>
 </body>

@@ -190,7 +190,7 @@ span {
 /*============== HEADINGS AND LINKS ============*/
 
 h1 {
-  
+
     color: #23385f;
     font-weight: normal;
     text-align: center;
@@ -232,6 +232,37 @@ hr {
     margin-bottom: 30px;
     margin-top: 0px;
     border-color: red;
+}
+/*=========================================*/
+div.edi{
+  margin: 0 auto;
+  width: 1068px;
+
+}
+div.edi button {
+    background-color: #990099;
+    border: none;
+    outline: none;
+    color: white;
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 6px;
+}
+
+div.edi button:hover {
+    background-color: #330033;
+}
+
+div.edi{
+  background-color: #c1d7d7;
+}
+div.edi input[type=text]{
+  width: 250px;
+}
+div.edi select{
+  width: 160px;
 }
 
 

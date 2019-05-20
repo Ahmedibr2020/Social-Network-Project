@@ -8,6 +8,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 // Establish Database Connection
 $conn = connect();
+$sql77 = "SELECT *  FROM users
+             WHERE users.user_id = {$_SESSION['user_id']} ";
+    $query77 = mysqli_query($conn, $sql77);
+    $row77 = mysqli_fetch_assoc($query77);
+
 ?>
 
 <?php
@@ -81,6 +86,7 @@ if(isset($_GET['id']) && $_GET['id'] != $_SESSION['user_id']) {
                           FROM users
                           WHERE users.user_id = $current_id";
             $profilequery = mysqli_query($conn, $profilesql);
+			
         } else { // Another Profile ---> Retrieve User data and friendship status
             $profilesql = "SELECT users.user_id, users.user_gender, users.user_hometown, users.user_status, users.user_birthdate,
                                     users.user_firstname, users.user_lastname, userfriends.friendship_status
@@ -160,10 +166,14 @@ if(isset($_GET['id']) && $_GET['id'] != $_SESSION['user_id']) {
                 <br>
                 <?php if($flag == 0){?>
                 <div class="profile">
+					
+				<?php echo'<center><a href="edit.php?type=post&id=' . $row77['user_id'] .'"><input type="submit" value ="Edit Profile "></a></center>';?>
                     <center class="changeprofile">Change Profile Picture</center>
                     <br>
+					
                     <form action="" method="post" enctype="multipart/form-data">
                         <center>
+							
                             <label class="upload" onchange="showPath()">
                                 <span id="path" style="background-color: #4267b2;color: white;">... </span>
                                 <input type="file" name="fileUpload" id="selectedFile">

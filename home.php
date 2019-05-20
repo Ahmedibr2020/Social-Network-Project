@@ -26,7 +26,7 @@ $conn = connect();
         <br>
         <div class="createpost">
             <form method="post" action="" onsubmit="return validatePost()" enctype="multipart/form-data">
-                <h2>Make Post</h2>
+                <h2>Make a Post</h2>
                 <hr>
                 <span style="float:right; color:black">
                 <input type="checkbox" id="public" name="public">
